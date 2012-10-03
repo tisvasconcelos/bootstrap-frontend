@@ -6,7 +6,7 @@ var Dashboard = (function(_super){
 	function Dashboard(){
 		_super.call(self);
 
-		head.js("scripts/helpers/utils.js");
+		head.js("/scripts/helpers/utils.js");
 
 		self.clickButton();
 	}
