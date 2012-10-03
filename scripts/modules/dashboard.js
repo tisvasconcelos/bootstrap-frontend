@@ -5,7 +5,7 @@ var Dashboard = (function(_super){
 	//Constructor
 	function Dashboard(){
 		_super.call(self);
-		head.js("./scripts/helpers/utils.js");
+		head.js(self.url + "scripts/helpers/utils.js");
 		self.clickButton();
 	}
 

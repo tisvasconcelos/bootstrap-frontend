@@ -15,7 +15,7 @@ var App = (function(){
 
 	//Constructor
 	function App(){
-		this.url = document.location.href;
+		this.url = "http://tisvasconcelos.github.com/bootstrap-frontend/";
 	}
 
 	/**
