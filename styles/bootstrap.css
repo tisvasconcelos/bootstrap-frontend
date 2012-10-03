@@ -2537,7 +2537,6 @@ button.close {
 
 .btn:hover,
 .btn:active,
-.btn.active,
 .btn.disabled,
 .btn[disabled] {
   color: #333333;

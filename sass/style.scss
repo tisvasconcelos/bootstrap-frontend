@@ -1,9 +1,63 @@
 @import url("bootstrap.min.css");
 
-body{
-	margin: 0;
+@mixin gradient($start: #82d4f5, $end: #1085bf){
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($start), to($end));
+	background-image: -webkit-linear-gradient(top, $start, $end);
+	background-image: -o-linear-gradient(top, $start, $end);
+	background-image: linear-gradient(to bottom, $start, $end);
+	background-image: -moz-linear-gradient(top, $start, $end);
+	background-image: -ms-linear-gradient(top, $start, $end);
+
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start}', endColorstr='#{$end}',GradientType=0 );
 }
 
-a{
+@mixin radius($top: 2px, $right: 2px, $left: 2px, $bottom: 2px){
+	-webkit-border-radius: $top $right $left $bottom;
+	-moz-border-radius: $top $right $left $bottom;
+	border-radius: $top $right $left $bottom;
+	}
+
+@mixin shadow($color: #adb3bc){
+	-webkit-box-shadow: 0 2px 2px $color;
+	-moz-box-shadow: 0 2px 2px $color;
+	box-shadow: 0 2px 2px $color;
+
+	/*filter: "progid:DXImageTransform.Microsoft.Shadow(color=#{$color},direction=200,strength=2)"; /* IE8+ */  
+    /*filter: progid:DXImageTransform.Microsoft.Shadow(color=#{$color},direction=200,strength=2); /* IE7 and lower */  
+}
+
+body{
+	margin: 50px;
+}
+
+.btn.primary{
+	font: bold 12px "Arial";
 	color: #fff;
+	padding: 4px 13px;
+	text-shadow: none;
+	border: solid 1px;
+	border-top-color: #4c9dc5;
+	border-bottom-color: #4098c4;
+	border-left-color: #61a9cc;
+	border-right-color: #57a3c8;
+	background-color: #1085bf;
+
+	@include gradient;
+	@include radius;
+	@include shadow;
+}
+
+.btn.primary:hover,
+.btn.primary:active,
+.btn.primary.active{
+	border: solid 1px;
+	border-top-color: #4c9dc5;
+	border-bottom-color: #479dc6;
+	border-left-color: #61a9cc;
+	border-right-color: #57a3c8;
+	background-position: 0 0;
+	background-color: #349eca;
+
+	@include gradient(#ace3f8, #349eca);
 }

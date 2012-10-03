@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tests</title>
+	<link rel="stylesheet" href="libs/qunit.css">
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="workspace"></div>
+	<script src="libs/qunit.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../libs/jquery.js"><\/script>')</script>
+	<script src="../libs/head.load.js"></script>
+	<script type="text/javascript">
+		QUnit.done(function(){
+			$('#workspace').remove();
+		});
+
+		//testing method clickSubmit
+		module( "method: clickSubmit" );
+			//Prepering workspace
+	        var submit = $('<button type="submit" />').text('Test').appendTo('#workspace');
+	        var button = $('<button type="submit" />').text('Test').appendTo('#workspace');
+
+	        //Load app.js and runing tests
+	        head.js("../app.js", function(){
+	        	$(submit,button).click();
+
+				test("should be disabled button when button type equals submit clicked", function() {
+					equal( 'disabled', $(submit).attr('disabled').toString() );
+				});
+
+				test("should not be disabled button when button type not equals submit clicked", function() {
+					equal( undefined, $(button).attr('disabled') );
+				});
+	        });
+	</script>
+</body>
+</html>
