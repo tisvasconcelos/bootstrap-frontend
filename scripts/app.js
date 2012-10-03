@@ -26,6 +26,7 @@ var App = (function(){
 	self.clickSubmit = (function(){
 		$('button[type=submit]').unbind().click(function(e){
 			e.preventDefault();
+			
 			$(this).attr('disabled','disabled');
 		});
 	})();
