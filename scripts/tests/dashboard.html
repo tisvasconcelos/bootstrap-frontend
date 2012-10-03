@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tests</title>
+	<link rel="stylesheet" href="libs/qunit.css">
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="workspace"></div>
+	<script src="libs/qunit.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../libs/jquery.js"><\/script>')</script>
+	<script src="../libs/head.load.js"></script>
+	<script src="../app.js"></script>
+	<script type="text/javascript">
+		QUnit.done(function(){
+			$('#workspace').remove();
+		});
+
+		//testing method clickButton
+		module( "method: clickButton" );
+			//Prepering workspace
+	        var button = $('<button />').text('Test').appendTo('#workspace');
+
+	        //Load dashboard.js and runing tests
+	        head.js("../modules/dashboard.js", function(){
+	        	$(button).click();
+
+				test("should be change the button text when button clicked", function() {
+					notEqual( "Test", $(button).text().toString() );
+				});
+	        });
+	</script>
+</body>
+</html>
