@@ -2,7 +2,7 @@
 body {
   margin: 50px; }
 
-.btn.primary {
+.btn.primary, .btn.primary[disabled], .btn.primary[disabled]:hover {
   font: bold 12px "Arial";
   color: #fff;
   padding: 4px 13px;
@@ -13,17 +13,26 @@ body {
   border-left-color: #61a9cc;
   border-right-color: #57a3c8;
   background-color: #1085bf;
+  opacity: 1.0;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#82d4f5), to(#1085bf));
   background-image: -webkit-linear-gradient(top, #82d4f5, #1085bf);
   background-image: -o-linear-gradient(top, #82d4f5, #1085bf);
   background-image: linear-gradient(to bottom, #82d4f5, #1085bf);
   background-image: -moz-linear-gradient(top, #82d4f5, #1085bf);
+  background-image: -ms-linear-gradient(top, #82d4f5, #1085bf);
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#82d4f5', endColorstr='#1085bf',GradientType=0 );
   -webkit-border-radius: 2px 2px 2px 2px;
   -moz-border-radius: 2px 2px 2px 2px;
   border-radius: 2px 2px 2px 2px;
   -webkit-box-shadow: 0 2px 2px #adb3bc;
   -moz-box-shadow: 0 2px 2px #adb3bc;
-  box-shadow: 0 2px 2px #adb3bc; }
+  box-shadow: 0 2px 2px #adb3bc;
+  /*filter: "progid:DXImageTransform.Microsoft.Shadow(color=#adb3bc,direction=200,strength=2)"; /* IE8+ */
+  /*filter: progid:DXImageTransform.Microsoft.Shadow(color=#adb3bc,direction=200,strength=2); /* IE7 and lower */ }
+
+.btn.primary[disabled], .btn.primary[disabled]:hover {
+  opacity: 0.65; }
 
 .btn.primary:hover,
 .btn.primary:active,
@@ -39,4 +48,7 @@ body {
   background-image: -webkit-linear-gradient(top, #ace3f8, #349eca);
   background-image: -o-linear-gradient(top, #ace3f8, #349eca);
   background-image: linear-gradient(to bottom, #ace3f8, #349eca);
-  background-image: -moz-linear-gradient(top, #ace3f8, #349eca); }
+  background-image: -moz-linear-gradient(top, #ace3f8, #349eca);
+  background-image: -ms-linear-gradient(top, #ace3f8, #349eca);
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ace3f8', endColorstr='#349eca',GradientType=0 ); }
