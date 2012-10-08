@@ -21,10 +21,9 @@
 	        var button = $('<button />').text('Test').appendTo('#workspace');
 
 	        //Load dashboard.js and runing tests
-	        require(["modules/dashboard"], function(){
-	        	$(button).click();
-
+	        requirejs(["modules/dashboard"], function(){
 				test("should be change the button text when button clicked", function() {
+	        		$(button).click();
 					notEqual( "Test", $(button).text().toString() );
 				});
 	        });
