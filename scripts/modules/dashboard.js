@@ -29,7 +29,7 @@ var Dashboard = (function(_super){
 	return Dashboard;
 })(App);
 
-require(['scripts/helpers/utils.js'],function(){
+require(['helpers/utils'],function(){
 	//Autoload class if dependencies are load
 	new Dashboard();
 });
