@@ -20,6 +20,7 @@ var Dashboard = (function(_super){
 	 * Ao clicar no button muda seu value para "Aguarde..."
 	 */
 	_prototype.clickButton = function(){
+		console.log('eve');
 		$('button').click(function(e){
 			e.preventDefault();
 			$(this).html("Aguarde...");
