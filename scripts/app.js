@@ -1,8 +1,12 @@
+//Function for class extends
 var __extends = this.__extends || function (d, b) {
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 }
+
+//RequireJS configuration
+require.config({baseUrl: "scripts/",});
 
 /**
  *	@class App
@@ -11,11 +15,13 @@ var __extends = this.__extends || function (d, b) {
  * @important Todas as class devem extender ela
  */
 var App = (function(){
-	self = App.prototype;
+	_prototype = App.prototype;
 
 	//Constructor
 	function App(){
-		this.url = "http://tisvasconcelos.github.com/bootstrap-frontend/";
+		var _self = this;
+
+		_self.clickSubmit();
 	}
 
 	/**
@@ -23,13 +29,15 @@ var App = (function(){
 	 *
 	 * Todos os button[type=submit] ao serem clicados entraram nesta regra e ficaram disabled
 	 */
-	self.clickSubmit = (function(){
+	_prototype.clickSubmit = function(){
 		$('button[type=submit]').unbind().click(function(e){
 			e.preventDefault();
 			
 			$(this).attr('disabled','disabled');
 		});
-	})();
+	};
 
 	return App;
 })();
+
+new App();

@@ -31,7 +31,7 @@ body{
 	margin: 50px;
 }
 
-.btn.primary{
+.btn.primary, .btn.primary[disabled], .btn.primary[disabled]:hover{
 	font: bold 12px "Arial";
 	color: #fff;
 	padding: 4px 13px;
@@ -42,10 +42,15 @@ body{
 	border-left-color: #61a9cc;
 	border-right-color: #57a3c8;
 	background-color: #1085bf;
+	opacity: 1.0;
 
 	@include gradient;
 	@include radius;
 	@include shadow;
+}
+
+.btn.primary[disabled], .btn.primary[disabled]:hover{
+	opacity: 0.65;
 }
 
 .btn.primary:hover,

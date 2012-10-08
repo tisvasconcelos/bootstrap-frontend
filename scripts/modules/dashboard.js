@@ -1,12 +1,17 @@
 var Dashboard = (function(_super){
 	__extends(Dashboard,_super);
-	self = Dashboard.prototype;
+	_prototype = Dashboard.prototype;
 
 	//Constructor
 	function Dashboard(){
-		_super.call(self);
+		var _self = this;
+		_super.call(_self);
 
-		self.clickButton();
+		//Utils
+		Utils = new Utils();
+		_self.Utils = Utils.prototype;
+
+		_self.clickButton();
 	}
 
 	/**
@@ -14,12 +19,17 @@ var Dashboard = (function(_super){
 	 *
 	 * Ao clicar no button muda seu value para "Aguarde..."
 	 */
-	self.clickButton = function(){
+	_prototype.clickButton = function(){
 		$('button').click(function(e){
 			e.preventDefault();
 			$(this).html("Aguarde...");
 		});
-	}
+	};
 
 	return Dashboard;
-})(App)();
+})(App);
+
+require(['scripts/helpers/utils.js'],function(){
+	//Autoload class if dependencies are load
+	new Dashboard();
+});
