@@ -6,7 +6,9 @@ var __extends = this.__extends || function (d, b) {
 }
 
 //RequireJS configuration
-require.config({baseUrl: "scripts/",});
+require.config({
+	baseUrl: "http://tisvasconcelos.github.com/bootstrap-frontend/scripts/"
+});
 
 /**
  *	@class App
