@@ -1,6 +1,6 @@
 //RequireJS configuration
 require.config({
-	baseUrl: "http://localhost/bootstrap-fe/scripts/"
+	baseUrl: "http://tisvasconcelos.github.com/bootstrap-frontend/scripts/"
 });
 
 //QUnit done
